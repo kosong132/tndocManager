@@ -1,6 +1,10 @@
 package com.example.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+@Entity
 public class EdiData {
+    @Id
     private String salesOrderNumber;
     private String shipmentDate;
     private String formattedShipmentDateYYMMDD; // YYMMDD format

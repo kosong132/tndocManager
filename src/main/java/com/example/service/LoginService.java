@@ -73,7 +73,6 @@ public class LoginService {
             emailSender.send(message);
             return true; // Email sent successfully
         } catch (MailException e) {
-            e.printStackTrace();
             return false; // Email sending failed
         }
     }

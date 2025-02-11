@@ -56,19 +56,23 @@ public class EdiGeneratorService {
         if (row.getCell(cellIndex) != null) {
             Cell cell = row.getCell(cellIndex);
             switch (cell.getCellType()) {
-                case STRING:
+                case STRING -> {
                     return cell.getStringCellValue();
-                case NUMERIC:
+                }
+                case NUMERIC -> {
                     if (DateUtil.isCellDateFormatted(cell)) {
                         SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd");
                         return dateFormat.format(cell.getDateCellValue());
                     } else {
                         return String.valueOf((long) cell.getNumericCellValue());
                     }
-                case BOOLEAN:
+                }
+                case BOOLEAN -> {
                     return String.valueOf(cell.getBooleanCellValue());
-                default:
+                }
+                default -> {
                     return "";
+                }
             }
         }
         return "";
