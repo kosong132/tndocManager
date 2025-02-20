@@ -1,5 +1,5 @@
 # Use Maven to build the JAR first
-FROM maven:3.8.6-openjdk-17 as build
+FROM maven:3.8.6-eclipse-temurin-17 as build
 WORKDIR /app
 
 # Copy source code and pom.xml
