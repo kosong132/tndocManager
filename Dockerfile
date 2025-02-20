@@ -1,11 +1,19 @@
-# Use OpenJDK 17 as the base image
-FROM openjdk:17-jdk-slim
-
-# Set the working directory inside the container
+# Use Maven to build the JAR first
+FROM maven:3.8.6-openjdk-17 as build
 WORKDIR /app
 
-# Copy the application JAR file into the container
-COPY target/edixserver-0.0.1-SNAPSHOT.jar app.jar
+# Copy source code and pom.xml
+COPY . .
+
+# Build the application
+RUN mvn clean package -DskipTests
+
+# Use OpenJDK to run the built JAR
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+
+# Copy the built JAR from the previous stage
+COPY --from=build /app/target/edixserver-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the application port
 EXPOSE 8080
