@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the application JAR file into the container
-COPY target/Tedixserver-0.0.1-SNAPSHOT.jar app.jar
+COPY target/edixserver-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the application port
 EXPOSE 8080
