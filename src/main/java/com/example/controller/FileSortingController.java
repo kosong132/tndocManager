@@ -27,7 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/upload")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class FileSortingController {
     private static final String UPLOAD_DIR = "uploads/";
 

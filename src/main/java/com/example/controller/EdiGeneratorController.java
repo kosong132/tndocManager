@@ -20,7 +20,7 @@ import com.example.service.EmailService;
 import com.example.service.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200") // Enable CORS for Angular app
+@CrossOrigin(origins = "*") // Enable CORS for Angular app
 @RequestMapping("/api/edi-generator")
 public class EdiGeneratorController {
 

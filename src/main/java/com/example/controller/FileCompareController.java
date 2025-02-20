@@ -26,7 +26,7 @@ import com.example.service.FileParserService;
 
 @RestController
 @RequestMapping("/api/files")
-@CrossOrigin(origins = "http://localhost:4200") // Update with the Angular frontend URL
+@CrossOrigin(origins = "*") // Update with the Angular frontend URL
 public class FileCompareController {
 
     private final FileParserService parserService;

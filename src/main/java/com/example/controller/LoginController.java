@@ -18,7 +18,7 @@ import com.example.service.LoginService;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:4200") // Allow requests from Angular frontend 
+@CrossOrigin(origins = "*") // Allow requests from Angular frontend 
 public class LoginController {
 
     private LoginService loginService;

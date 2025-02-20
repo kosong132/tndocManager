@@ -19,7 +19,7 @@ import com.example.service.XmlService;
 
 import jakarta.servlet.http.HttpServletResponse;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/xml")
 public class XMLController {
